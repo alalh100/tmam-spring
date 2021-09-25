@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class Age extends Info {
-    private final String name = "Your Age is: ";
+    private final String name = "Your age is: ";
     private final String argument;
 
     public Age(String argument) {
