@@ -18,8 +18,6 @@ jobs:
           java-version: 14
       - name: Run Tests
         run: mvn test
-      - name: SpotBugs Main
-        run: mvn site
       - name: SpotBugs Test
         run: mvn spotbugs:check
       - name: pmd Test
