@@ -23,4 +23,4 @@ jobs:
       - name: pmd Test
         run: mvn pmd:check
       - name: checkstyle Test
-        run: mvn mvn checkstyle:check
+        run: mvn checkstyle:check
