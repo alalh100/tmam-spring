@@ -17,12 +17,12 @@ jobs:
         with:
           java-version: 14
       - name: Run Tests
-        run: ./mvn test
+        run: mvn test
       - name: SpotBugs Main
-        run: ./mvn site
+        run: mvn site
       - name: SpotBugs Test
-        run: ./mvn spotbugs:check
+        run: mvn spotbugs:check
       - name: pmd Test
-        run: ./mvn pmd:check
+        run: mvn pmd:check
       - name: checkstyle Test
-        run: ./mvn mvn checkstyle:check
+        run: mvn mvn checkstyle:check
