@@ -1,26 +1,25 @@
 package com.tmam.springtmam;
 
+import com.tmam.springtmam.model.Age;
+import com.tmam.springtmam.model.Info;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
 public class Controller {
 
     @GetMapping("/{name}/{birthday}")
-    public String getInfo(@PathVariable String name, @PathVariable String birthday) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = formatter.parse(birthday);
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return "Hallo" + name + localDate.toString();
+    public List<Info> getInfo(@PathVariable String name, @PathVariable String birthday) {
+        LinkedList<Info> infos = new LinkedList<>();
+        Info age = new Age(birthday);
+        infos.add(age);
+        return infos;
     }
 
 }
