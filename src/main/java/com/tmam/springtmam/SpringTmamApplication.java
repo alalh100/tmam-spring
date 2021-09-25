@@ -1,3 +1,4 @@
+// CHECKSTYLE:OFF
 package com.tmam.springtmam;
 
 import org.springframework.boot.SpringApplication;
