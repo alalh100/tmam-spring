@@ -13,15 +13,16 @@ import java.util.Date;
 @Getter
 @Setter
 public class Age extends Info {
-    private final String name = "Your age is: ";
+    private final String name;
     private final String argument;
 
-    public Age(String argument) {
+    public Age(final String argument) {
+        this.name = "Your age is: ";
         this.argument = argument;
     }
 
     @Override
-    public String getValue() {
+    public final String getValue() {
         LocalDate localDate = null;
         try {
             localDate = getLocalDate(this.argument);
@@ -31,10 +32,14 @@ public class Age extends Info {
         LocalDate today = LocalDate.now();
         Period period = Period.between(localDate, today);
 
-        return period.getYears() + " years " + period.getMonths() + " months " + period.getDays() + " days ";
+        return period.getYears()
+                + " years " + period.getMonths()
+                + " months " + period.getDays()
+                + " days ";
     }
 
-    private LocalDate getLocalDate(String birthday) throws ParseException {
+    private LocalDate getLocalDate(final String birthday)
+            throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = formatter.parse(birthday);
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();

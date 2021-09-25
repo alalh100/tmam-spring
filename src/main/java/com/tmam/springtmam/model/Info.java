@@ -1,3 +1,4 @@
+// CHECKSTYLE:OFF
 package com.tmam.springtmam.model;
 
 import lombok.Getter;

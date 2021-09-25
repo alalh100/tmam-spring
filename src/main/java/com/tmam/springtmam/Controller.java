@@ -13,8 +13,17 @@ import java.util.List;
 @RequestMapping("/info")
 public class Controller {
 
+    /**
+     * Sending the calculated informations as REST to the frontend application
+     *
+     * @param name     name of the person
+     * @param birthday birthday of the person
+     * @return Informations out of the name and the birthday
+     */
+
     @GetMapping("/{name}/{birthday}")
-    public List<Info> getInfo(@PathVariable String name, @PathVariable String birthday) {
+    public List<Info> getInfo(@PathVariable final String name,
+                              @PathVariable final String birthday) {
         LinkedList<Info> infos = new LinkedList<>();
         Info age = new Age(birthday);
         Info luck = new LuckNumber(name);
