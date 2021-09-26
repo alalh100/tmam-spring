@@ -1,11 +1,9 @@
 package com.tmam.springtmam.model;
 
 import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class LuckNumber extends Info {
+    @Getter
     private final String name;
     private final String argument;
 

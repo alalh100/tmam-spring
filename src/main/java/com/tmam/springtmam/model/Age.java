@@ -1,7 +1,6 @@
 package com.tmam.springtmam.model;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,9 +9,8 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 
-@Getter
-@Setter
 public class Age extends Info {
+    @Getter
     private final String name;
     private final String argument;
 
