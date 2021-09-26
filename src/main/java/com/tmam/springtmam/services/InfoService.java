@@ -18,7 +18,8 @@ public class InfoService {
      * @param birthday input birthday
      * @return list of all the objects that contains the informations
      */
-    public final List<Info> getAllInfo(final String name, final String birthday) {
+    public final List<Info> getAllInfo(final String name,
+                                       final String birthday) {
         List<Info> infos = new LinkedList<>();
         Info age = new Age(birthday);
         Info luck = new LuckNumber(name);
