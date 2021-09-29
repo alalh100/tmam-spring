@@ -1,8 +1,6 @@
 package com.tmam.springtmam.services;
 
-import com.tmam.springtmam.model.Age;
-import com.tmam.springtmam.model.Info;
-import com.tmam.springtmam.model.LuckNumber;
+import com.tmam.springtmam.model.*;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -23,7 +21,13 @@ public class InfoService {
         List<Info> infos = new LinkedList<>();
         Info age = new Age(birthday);
         Info luck = new LuckNumber(name);
+        Info ageInDays = new AgeInDays(birthday);
+        Info dayOfWeek = new DayOfBirth(birthday);
+        Info nextBirthday = new NextBirthday(birthday);
         infos.add(age);
+        infos.add(ageInDays);
+        infos.add(dayOfWeek);
+        infos.add(nextBirthday);
         infos.add(luck);
         return infos;
     }

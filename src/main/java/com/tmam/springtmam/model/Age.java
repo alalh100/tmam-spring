@@ -2,12 +2,8 @@ package com.tmam.springtmam.model;
 
 import lombok.Getter;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
-import java.util.Date;
 
 public class Age extends Info {
     @Getter
@@ -21,12 +17,7 @@ public class Age extends Info {
 
     @Override
     public final String getValue() {
-        LocalDate localDate = null;
-        try {
-            localDate = getLocalDate(this.argument);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        LocalDate localDate = getLocalDate(this.argument);
         LocalDate today = LocalDate.now();
         Period period = Period.between(localDate, today);
 
@@ -36,10 +27,10 @@ public class Age extends Info {
                 + " days ";
     }
 
-    private LocalDate getLocalDate(final String birthday)
-            throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = formatter.parse(birthday);
-        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-    }
+//    private LocalDate getLocalDate(final String birthday)
+//            throws ParseException {
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+//        Date date = formatter.parse(birthday);
+//        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+//    }
 }
